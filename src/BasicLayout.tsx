@@ -1,31 +1,36 @@
 import './BasicLayout.less';
 
-import React, { CSSProperties, useContext, useEffect, useState } from 'react';
-import { BreadcrumbProps as AntdBreadcrumbProps } from 'antd/es/breadcrumb';
+import type { CSSProperties } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import type { BreadcrumbProps as AntdBreadcrumbProps } from 'antd/es/breadcrumb';
 import { Layout } from 'antd';
 import classNames from 'classnames';
 import warning from 'warning';
 import useMergeValue from 'use-merge-value';
 import { stringify } from 'use-json-comparison';
-import useAntdMediaQuery from 'use-media-antd-query';
+import useAntdMediaQuery from './utils/useAntdMediaQuery';
 
 import Omit from 'omit.js';
-import Header, { HeaderViewProps } from './Header';
-import {
+import type { HeaderViewProps } from './Header';
+import Header from './Header';
+import type {
   MenuDataItem,
   MessageDescriptor,
   Route,
   RouterTypes,
   WithFalse,
 } from './typings';
-import { getPageTitleInfo, GetPageTitleProps } from './getPageTitle';
-import defaultSettings, { PureSettings } from './defaultSettings';
-import getLocales, { LocaleType } from './locales';
-import { BaseMenuProps } from './SiderMenu/BaseMenu';
+import type { GetPageTitleProps } from './getPageTitle';
+import { getPageTitleInfo } from './getPageTitle';
+import type { PureSettings } from './defaultSettings';
+import defaultSettings from './defaultSettings';
+import type { LocaleType } from './locales';
+import getLocales from './locales';
+import type { BaseMenuProps } from './SiderMenu/BaseMenu';
 import Footer from './Footer';
 import RouteContext from './RouteContext';
 import SiderMenu from './SiderMenu';
-import { SiderMenuProps } from './SiderMenu/SiderMenu';
+import type { SiderMenuProps } from './SiderMenu/SiderMenu';
 import { getBreadcrumbProps } from './utils/getBreadcrumbProps';
 import getMenuData from './utils/getMenuData';
 import { isBrowser, useDeepCompareEffect } from './utils/utils';
@@ -171,7 +176,7 @@ const defaultPageTitleRender = (
 };
 
 export type BasicLayoutContext = { [K in 'location']: BasicLayoutProps[K] } & {
-  breadcrumb: { [path: string]: MenuDataItem };
+  breadcrumb: Record<string, MenuDataItem>;
 };
 
 const getPaddingLeft = (
@@ -241,17 +246,13 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const colSize = useAntdMediaQuery();
   const { routes = [] } = route;
   const [menuInfoData, setMenuInfoData] = useMergeValue<{
-    breadcrumb?: {
-      [key: string]: MenuDataItem;
-    };
+    breadcrumb?: Record<string, MenuDataItem>;
     breadcrumbMap?: Map<string, MenuDataItem>;
     menuData?: MenuDataItem[];
   }>(() => getMenuData(routes, menu, formatMessage, menuDataRender));
 
   let renderMenuInfoData: {
-    breadcrumb?: {
-      [key: string]: MenuDataItem;
-    };
+    breadcrumb?: Record<string, MenuDataItem>;
     breadcrumbMap?: Map<string, MenuDataItem>;
     menuData?: MenuDataItem[];
   } = {};
