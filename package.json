@@ -1,5 +1,5 @@
 {
-  "name": "@ant-design/pro-layout",
+  "name": "@ant-design/pro-layout-with-ssr",
   "version": "6.3.0",
   "description": "ant-design-pro layout, easy to use pro scaffolding.",
   "keywords": [
@@ -13,13 +13,13 @@
     "menu",
     "pro"
   ],
-  "homepage": "https://github.com/ant-design/ant-design-pro-layout#readme",
+  "homepage": "https://github.com/amirjr1378/ant-design-pro-layout#readme",
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design-pro-layout/issues"
+    "url": "https://github.com/amirjr1378/ant-design-pro-layout/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ant-design/ant-design-pro-layout"
+    "url": "git+https://github.com/amirjr1378/ant-design-pro-layout"
   },
   "license": "MIT",
   "author": "qixian.cs@outlook.com",
