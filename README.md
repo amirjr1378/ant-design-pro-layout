@@ -1,14 +1,8 @@
-# 此仓库已废弃
+# Ant design pro layout with ssr support
 
-**重要：** 此仓库后续不再维护，也不再接受更多的特性更新。`ant-design/pro-layout` 将会迁移至 `ant-design/pro-components` 仓库进行后续的维护，访问 https://procomponent.ant.design/layout 了解更多。此变更不影响继续使用 `@ant-design/pro-layout` 这个 npm 包名安装使用此组件。
+I just change utility which used window and break the program on ssr.
 
-
-English | [简体中文](./README.zh-CN.md) [changelog](./changelog.en-US.md)
-
-![](https://codecov.io/gh/ant-design/ant-design-pro-layout/branch/master/graph/badge.svg)
-[![](https://img.shields.io/npm/dw/@ant-design/pro-layout.svg)](https://www.npmjs.com/package/@ant-design/pro-layout) [![npm package](https://img.shields.io/npm/v/@ant-design/pro-layout.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@ant-design/pro-layout) [![](https://img.shields.io/github/issues/ant-design/ant-design-pro-layout.svg)](https://github.com/ant-design/ant-design-pro-layout/issues) 
-
-<h1 align="center">Ant Design Pro Layout</h1>
+<h1 align="center">Ant Design Pro Layout with ssr support</h1>
 
 <div align="center">
 
@@ -21,13 +15,13 @@ An out-of-box UI solution for enterprise applications as a React boilerplate. Th
 ## Usage
 
 ```bash
-npm i @ant-design/pro-layout --save
+npm i @amirkarimi/antd-pro-layout-with-ssr --save
 // or
-yarn add @ant-design/pro-layout
+yarn add @amirkarimi/antd-pro-layout-with-ssr
 ```
 
 ```jsx | pure
-import ProLayout from '@ant-design/pro-layout';
+import ProLayout from '@amirkarimi/antd-pro-layout-with-ssr';
 
 render(<ProLayout />, document.getElementById('root'));
 ```
@@ -42,9 +36,8 @@ render(<ProLayout />, document.getElementById('root'));
 
 > All methods with the suffix `Render` can prevent rendering by passing in `false`.
 
-
 | Property | Description | Type | Default Value |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | title | layout in the upper left corner title | ReactNode | `'Ant Design Pro'` |
 | logo | layout top left logo url | ReactNode \| ()=>ReactNode | - |
 | pure | Interface that doesn't require extra ui | boolean | - |
@@ -90,13 +83,13 @@ Layout support for most of [Menu](https://ant.design/components/menu-cn/#Menu) b
 ### SettingDrawer
 
 ```js | pure
-import { SettingDrawer } from '@ant-design/pro-layout';
+import { SettingDrawer } from '@amirkarimi/antd-pro-layout-with-ssr';
 ```
 
 > SettingDrawer provides a graphical interface to set the layout configuration. Not recommended for use in a product environment.
 
 | Property | Description | Type | Default Value |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | settings | layout settings | [`Settings`](#Settings) | [`Settings`](#Settings) | - |
 | onSettingChange | The setting changes event | (settings: [Settings](#Settings)) => void | - |
 | hideHintAlert | remove hint info | boolean | - |
@@ -151,7 +144,7 @@ GridContent encapsulates [equal width](https://preview.pro.ant.design/dashboard/
 Generate menuData and breadcrumb based on the router information.
 
 ```js | pure
-import { getMenuData } from '@ant-design/pro-layout';
+import { getMenuData } from '@amirkarimi/antd-pro-layout-with-ssr';
 
 const { breadcrumb, menuData } = getMenuData(
   routes,
@@ -171,7 +164,7 @@ const { breadcrumb, menuData } = getMenuData(
 ### getPageTitle
 
 ```js | pure
-import { getPageTitle } from '@ant-design/pro-layout';
+import { getPageTitle } from '@amirkarimi/antd-pro-layout-with-ssr';
 
 const title = getPageTitle({
   pathname,
@@ -199,7 +192,7 @@ getPageTitle encapsulates the logic based on the title generated on menuData.
 ### Settings
 
 ```ts | pure
-// can be done via import { Settings } from '@ant-design/pro-layout/defaultSettings' to get this type
+// can be done via import { Settings } from '@amirkarimi/antd-pro-layout-with-ssr/defaultSettings' to get this type
 
 export interface Settings {
   /**
@@ -240,7 +233,7 @@ export interface Settings {
 ### MenuDataItem
 
 ```ts | pure
-// can be imported { MenuDataItem } from '@ant-design/pro-layout/typings' to get this type
+// can be imported { MenuDataItem } from '@amirkarimi/antd-pro-layout-with-ssr/typings' to get this type
 
 export interface MenuDataItem {
   authority?: string[] | string;
@@ -258,7 +251,7 @@ export interface MenuDataItem {
 ### Route
 
 ```ts | pure
-// can be imported { RouterTypes } from '@ant-design/pro-layout/typings'  to get this type
+// can be imported { RouterTypes } from '@amirkarimi/antd-pro-layout-with-ssr/typings'  to get this type
 export interface Route {
   path: string;
   routes: Array<{
