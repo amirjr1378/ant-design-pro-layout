@@ -1,4 +1,4 @@
-import { Settings } from '../../src/';
+import { Settings } from '../../../src/';
 
 export default {
   navTheme: 'light',

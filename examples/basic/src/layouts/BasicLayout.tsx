@@ -8,7 +8,7 @@ import ProLayout, {
   MenuDataItem,
   BasicLayoutProps as ProLayoutProps,
   SettingDrawer,
-} from '../../../src/';
+} from '../../../../src/';
 import { Select } from 'antd';
 import React from 'react';
 import { HeartTwoTone } from '@ant-design/icons';

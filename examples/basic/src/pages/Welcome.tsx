@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Typography, Alert } from 'antd';
 import styles from './Welcome.less';
-import { PageContainer } from '../../../src/';
+import { PageContainer } from '../../../../src/';
 import { useIntl } from 'umi';
 
 const CodePreview: React.FC<{}> = ({ children }) => (
