@@ -11,6 +11,7 @@ _roadhog-api-doc
 /.vscode
 /es
 /lib
+**/.next
 
 # misc
 .DS_Store
